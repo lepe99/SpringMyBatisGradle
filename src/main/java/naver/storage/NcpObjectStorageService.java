@@ -31,7 +31,7 @@ public class NcpObjectStorageService implements ObjectStorageRepository {
                         naverConfig.getEndPoint(), naverConfig.getRegionName()))
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(
                         naverConfig.getAccessKey(), naverConfig.getSecretKey())))
-                .build();123
+                .build();
     }
     
     @Override
