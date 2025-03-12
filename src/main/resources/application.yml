@@ -15,3 +15,10 @@ spring.datasource:
 mybatis:
   type-aliases-package: data.domain
   mapper-locations: /mapper/**/*.xml
+
+# ncp Object Storage settings
+ncp:
+  accessKey: ncp_iam_BPASKR3I3ZqJLpkk1oca
+  secretKey: ncp_iam_BPKSKRGVh4E1o1wevlfPVjLD2AYGEOMnvy
+  regionName: kr-standard
+  endPoint: https://kr.object.ncloudstorage.com
