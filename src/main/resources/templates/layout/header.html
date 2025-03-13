@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" layout:decorate="~{layout/main}">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +19,10 @@
     </style>
 </head>
 <body>
-<div layout:fragment="content">
-    <h3 class="alert alert-danger">사원 명1단</h3>
-</div>
+<header th:fragment="header">
+    <h4 style="text-align: center; color: magenta;">사원관리</h4>
+    <button class="mainBtn btn btn-outline-secondary" onclick="location.href='./list'">사원목록</button>
+    <button class="mainBtn btn btn-outline-secondary" onclick="location.href='./form'">사원추가</button>
+</header>
 </body>
 </html>

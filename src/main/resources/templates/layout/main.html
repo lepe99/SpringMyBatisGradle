@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" layout:decorate="~{layout/main}">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,8 +19,8 @@
     </style>
 </head>
 <body>
-<div layout:fragment="content">
-    <h3 class="alert alert-danger">사원 명1단</h3>
-</div>
+<header th:replace="~{layout/header :: header}"></header>
+<div layout:fragment="content"></div>
+<footer th:replace="~{layout/footer :: footer}"></footer>
 </body>
 </html>

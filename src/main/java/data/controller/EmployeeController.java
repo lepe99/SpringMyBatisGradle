@@ -9,4 +9,9 @@ public class EmployeeController {
     public String list() {
         return "employee/employeeList";
     }
+    
+    @GetMapping("/form")
+    public String form() {
+        return "employee/employeeForm";
+    }
 }
