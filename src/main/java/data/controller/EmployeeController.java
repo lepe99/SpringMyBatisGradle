@@ -64,7 +64,13 @@ public class EmployeeController {
     @GetMapping("/delete")
     public String delete(@RequestParam int num) {
         employeeService.deleteEmployee(num);
-        String image = employeeService.selectEmployeeByNum(num).getImage();
+        // nullable
+        String image;
+        try {
+            image = employeeService.selectEmployeeByNum(num).getImage();
+        } catch (NullPointerException e) {
+            image = null;
+        }
         if (image != null) {
             ncpObjectStorageService.deleteFile(bucketName, "employee", image);
         }
