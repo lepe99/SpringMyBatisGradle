@@ -2,7 +2,7 @@
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head th:replace="~{/layout/head :: head}"></head>
+<head th:replace="~{layout/head :: head}"></head>
 
 <body>
 <header th:replace="~{layout/header :: header}"></header>
@@ -12,6 +12,6 @@
 <footer th:replace="~{layout/footer :: footer}"></footer>
 
 
-<th:block th:replace="~{/layout/script :: script}"></th:block>
+<th:block th:replace="~{layout/script :: script}"></th:block>
 </body>
 </html>
