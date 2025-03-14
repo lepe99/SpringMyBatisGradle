@@ -28,8 +28,8 @@ public class EmployeeController {
     
     
     @GetMapping("/")
-    public String main() {
-        return "main";
+    public String home() {
+        return "employee/home";
     }
     
     @GetMapping("/list")
