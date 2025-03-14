@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+
+
+<div layout:fragment="content" style="margin-top: 20px; margin-left: 20px;">
+    <figure style="width: 80%;">
+        <th:block th:if="${employee.image == null}">
+            <img th:src="@{|${objectStorageUrl}noimg.jpg|}" style="width: 100%;">
+        </th:block>
+        <th:block th:if="${employee.image != null}">
+            <img th:src="@{|${objectStorageUrl}${employee.image}|}" style="width: 100%;">
+        </th:block>
+        
+        <figcaption>
+            <h4 th:text="|사원명 : ${employee.name}|">사원 이름</h4>
+            <h4 th:text="|부서 : ${employee.dept}|">부서</h4>
+            <h4 th:text="|입사일 : ${employee.regDate}|">입사일</h4>
+            <h4 th:text="|등록일 : ${#calendars.format(employee.createdAt, 'yyyy-MM-dd')}|">입사일</h4>
+        </figcaption>
+    </figure>
+    <button class="btn btn-outline-secondary" th:onclick="|location.href='@{updateForm(num=${employee.num})}'|">수정하기</button>
+    <button class="btn btn-outline-secondary" onclick="location.href='./list'">목록으로</button>
+</div>
+
+</html>

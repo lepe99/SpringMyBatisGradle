@@ -6,20 +6,22 @@
 
 
 <div layout:fragment="content" style="margin-top: 20px;">
-    <form action="./insert" method="post" enctype="multipart/form-data">
+    <form action="./update" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="num" th:value="${employee.num}">
+        <input type="hidden" name="oldImage" th:value="${employee.image}">
         <table class="table table-bordered addForm">
             <caption style="caption-side: top"><b>사원 추가</b></caption>
             <tbody>
             <tr>
                 <th style="width: 100px;">사원명</th>
                 <td>
-                    <input type="text" name="name" class="form-control" autofocus required>
+                    <input type="text" name="name" class="form-control" autofocus required th:value="${employee.name}">
                 </td>
             </tr>
             <tr>
                 <th style="width: 100px;">핸드폰</th>
                 <td>
-                    <input type="text" name="hp" class="form-control" required>
+                    <input type="text" name="hp" class="form-control" required th:value="${employee.hp}">
                 </td>
             </tr>
             <tr>
@@ -32,10 +34,10 @@
                 <th style="width: 100px;">부서</th>
                 <td>
                     <select name="dept" class="form-select">
-                        <option>교육부</option>
-                        <option>인사부</option>
-                        <option>홍보부</option>
-                        <option>관리부</option>
+                        <option th:selected="${employee.dept == '교육부'}">교육부</option>
+                        <option th:selected="${employee.dept == '인사부'}">인사부</option>
+                        <option th:selected="${employee.dept == '홍보부'}">홍보부</option>
+                        <option th:selected="${employee.dept == '관리부'}">관리부</option>
                     </select>
                 </td>
             </tr>
@@ -43,17 +45,17 @@
                 <th style="width: 100px;">성별</th>
                 <td>
                     <label>
-                        <input type="radio" name="gender" value="남자" checked>남자
+                        <input type="radio" name="gender" value="남자" th:checked="${employee.gender == '남자'}">남자
                     </label>
                     <label>
-                        <input type="radio" name="gender" value="여자">여자
+                        <input type="radio" name="gender" value="여자" th:checked="${employee.gender == '여자'}">여자
                     </label>
                 </td>
             </tr>
             <tr>
                 <th style="width: 100px;">입사일</th>
                 <td>
-                    <input type="date" name="regDate" class="form-control" value="2025-01-01">
+                    <input type="date" name="regDate" class="form-control" th:value="${employee.regDate}">
                 </td>
             </tr>
             <tr>

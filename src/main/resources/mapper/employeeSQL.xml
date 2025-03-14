@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data.mapper.EmployeeMapper">
+    <insert id="insertEmployee" parameterType="employeeDto">
+        insert into employee (name, image, gender, hp, dept, regDate)
+        values (#{name}, #{image}, #{gender}, #{hp}, #{dept}, #{regDate})
+    </insert>
+
+    <select id="selectEmployees" resultType="employeeDto">
+        select * from employee
+    </select>
+
+    <select id="selectEmployeeByNum" parameterType="int" resultType="employeeDto">
+        select * from employee
+        where num = #{num}
+    </select>
+
+    <delete id="deleteEmployee" parameterType="int">
+        delete from employee
+        where num = #{num}
+    </delete>
+
+    <update id="updateEmployee" parameterType="employeeDto">
+        update employee set name = #{name}, gender = #{gender}, hp = #{hp}, dept = #{dept}, regDate = #{regDate}
+        <if test="image != null">
+            , image = #{image}
+        </if>
+        where num = #{num}
+    </update>
+
+</mapper>

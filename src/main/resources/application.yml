@@ -13,7 +13,7 @@ spring.datasource:
 
 # mybatis settings
 mybatis:
-  type-aliases-package: data.domain
+  type-aliases-package: data.dto
   mapper-locations: /mapper/**/*.xml
 
 # ncp Object Storage settings
@@ -22,3 +22,13 @@ ncp:
   secretKey: ncp_iam_BPKSKRGVh4E1o1wevlfPVjLD2AYGEOMnvy
   regionName: kr-standard
   endPoint: https://kr.object.ncloudstorage.com
+
+
+# file upload setting
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB  # 단일 파일 최대 크기
+      max-request-size: 50MB # 전체 요청 최대 크기
+      enabled: true #멀티 파트 업로드 활성화
+      file-size-threshold: 2KB # 업로드 되는 파일의 임계값 설정, 디스크에 기록되기 전에 메모리에 보관되는 최대 크기

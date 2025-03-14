@@ -1,0 +1,38 @@
+body * {
+    font-family: 'Jua', sans-serif;
+}
+
+/* employeeList */
+.day {
+    float: right;
+    color: gray;
+    font-size: 0.9em;
+    margin-right: 20px;
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+ul.employeeList {
+    list-style: none;
+}
+
+ul.employeeList a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+ul.employeeList li:hover {
+    background-color: #ddd;
+}
+
+/* employeeForm */
+.addForm tbody th {
+    background-color: #eee8aa;
+}
