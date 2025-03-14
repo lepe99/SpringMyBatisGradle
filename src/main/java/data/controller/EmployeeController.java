@@ -58,7 +58,7 @@ public class EmployeeController {
         }
         
         employeeService.insertEmployee(employeeDTO);
-        return "redirect:/list";
+        return "redirect:./list";
     }
     
     @GetMapping("/delete")
@@ -69,7 +69,7 @@ public class EmployeeController {
             ncpObjectStorageService.deleteFile(bucketName, "employee", image);
         }
         
-        return "redirect:/list";
+        return "redirect:./list";
     }
     
     @GetMapping("/detail")
@@ -105,7 +105,7 @@ public class EmployeeController {
         }
         
         employeeService.updateEmployee(employeeDTO);
-        return "redirect:/detail?num=" + employeeDTO.getNum();
+        return "redirect:./detail?num=" + employeeDTO.getNum();
     }
 }
 
